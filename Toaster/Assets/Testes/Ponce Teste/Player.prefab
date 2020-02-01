@@ -147,7 +147,11 @@ MonoBehaviour:
   jumpForce: 15
   firePoint: {fileID: 6880593730836513473}
   bullet: {fileID: 1603034950521190470, guid: aaf2b6116f2b14d36b3b61d1130b0051, type: 3}
-  playerRB: {fileID: 6880593730722879914}
+  slowTime: 3
+  ghostTime: 2
+  timeBetweenShoots: 0.5
+  jumpTime: 0
+  deathTime: 0
 --- !u!1 &6880593730836513472
 GameObject:
   m_ObjectHideFlags: 0
