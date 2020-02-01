@@ -6,13 +6,14 @@ using UnityEngine.EventSystems;
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Transform parentToReturnTo = null;
+    public PlayerController playerController;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         parentToReturnTo = this.transform.parent;
         this.transform.SetParent(this.transform.parent.parent);
 
-        GetComponent<CanvasGroup>().blocksRaycasts = false;
+        //GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -26,9 +27,19 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         this.transform.SetParent(parentToReturnTo);
 
-        Debug.Log("OnEndDrag");
-        
+        if (this.gameObject.name == "JumpCard")
+        {
+            playerController.Jump();
+            Destroy(this.gameObject);
+        }
 
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
+        if (this.name == "FireCard")
+        {
+            playerController.Shoot();
+            Destroy(this.gameObject);
+        }
+
+
+        //GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 }

@@ -6,11 +6,12 @@ using UnityEngine.EventSystems;
 public class DropZone : MonoBehaviour, IDropHandler,IPointerEnterHandler, IPointerExitHandler
 {
     public PlayerController playerController;
-    public GameObject card;
     public void OnDrop(PointerEventData eventData)
     {
-        
-        
+        Draggable card = eventData.pointerDrag.GetComponent<Draggable>();
+        if (card != null)
+        {
+            card.parentToReturnTo = this.transform;
             if ( card.name == "JumpCard")
             {
                 playerController.Jump();
@@ -24,7 +25,7 @@ public class DropZone : MonoBehaviour, IDropHandler,IPointerEnterHandler, IPoint
             }
 
             
-        
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
