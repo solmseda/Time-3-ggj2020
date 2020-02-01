@@ -33,33 +33,35 @@ public class Deck : MonoBehaviour
 
     void Update()
     {
+        /*---C
+        ontrole da mão---*/
         if(hand[0].wasUsed == true){
            for(int i = 0; i < handSize; i++){
-                aux = Random.Range(0, deck.Length); // pega um uma carta aleatoria do deck
-                hand[i].CardInHand = deck[aux]; // seta a carta aleatoria e adiciona na posição 1 da mão
-                hand[i].wasUsed = false;
-            } 
+                hand[i] = hand[i+1]; // passa o próximo valor para a posição atual
+            }
+            aux = Random.Range(0, deck.Length); // pega um uma carta aleatoria do deck
+            hand[handSize].CardInHand = deck[aux]; // seta a carta aleatoria no final da mão
+            hand[0].wasUsed = false;
         }
         else if(hand[1].wasUsed == true){
             for(int i = 1; i < handSize; i++){
-                aux = Random.Range(0, deck.Length); // pega um uma carta aleatoria do deck
-                hand[i].CardInHand = deck[aux]; // seta a carta aleatoria e adiciona na posição 2 da mão
-                hand[i].wasUsed = false;
+                hand[i] = hand[i+1]; // passa o próximo valor para a posição atual
             }
+            aux = Random.Range(0, deck.Length); // pega um uma carta aleatoria do deck
+            hand[handSize].CardInHand = deck[aux]; // seta a carta aleatoria no final da mão
+            hand[1].wasUsed = false;
         }
         else if (hand[2].wasUsed == true){
             for(int i = 2; i < handSize; i++){
-                aux = Random.Range(0, deck.Length); // pega um uma carta aleatoria do deck
-                hand[i].CardInHand = deck[aux]; // seta a carta aleatoria e adiciona na posição 3 da mão
-                hand[i].wasUsed = false;
+                hand[i] = hand[i+1]; // passa o próximo valor para a posição atual
             }
+            aux = Random.Range(0, deck.Length); // pega um uma carta aleatoria do deck
+            hand[handSize].CardInHand = deck[aux]; // seta a carta aleatoria no final da mão
+            hand[2].wasUsed = false;
         }
         else if (hand[3].wasUsed == true){
-            for(int i = 3; i < handSize; i++){
-                aux = Random.Range(0, deck.Length); // pega um uma carta aleatoria do deck
-                hand[i].CardInHand = deck[aux]; // seta a carta aleatoria e adiciona na posição 4 da mão
-                hand[i].wasUsed = false;
-            }
+            hand[handSize].CardInHand = deck[aux]; // seta a carta aleatoria no final da mão
+            hand[3].wasUsed = false;
         }
     }
 }
