@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public PlayerController playerController;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         
@@ -20,6 +22,15 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if(this.gameObject.name == "JumpCard"){
+            playerController.Jump();
+        }
+
+        if (this.gameObject.name == "FireCard")
+        {
+            playerController.Shoot();
+        }
+
         Debug.Log("OnEndDrag");
         Destroy(this.gameObject);
     }
