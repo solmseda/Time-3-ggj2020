@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator RemoveGhostSkill()
     {
         yield return new WaitForSeconds(2);
-        GetComponent<Rigidbody2D>().gravityScale = 1f;
+        GetComponent<Rigidbody2D>().gravityScale = 3f;
         GetComponent<BoxCollider2D>().isTrigger = false;
     }
 }
