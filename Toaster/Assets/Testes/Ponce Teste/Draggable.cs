@@ -7,7 +7,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 {
     public Transform parentToReturnTo = null;
     public PlayerController playerController;
-    public Deck deck;
+    public GameObject hand;
+    public GameObject[] cards;
+    private int index;
+    private GameObject newCard;
+    
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -25,6 +29,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        index = Random.Range(0, cards.Length - 1);
+        newCard = cards[index];
+        Instantiate(newCard, hand.transform);
+        newCard.transform.SetParent(hand.transform);
+
 
         this.transform.SetParent(parentToReturnTo);
 
@@ -34,41 +43,41 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         //GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 
-    private void HandleCardSkills()
+    private void HandleCardSkills( )
     {
         if (this.gameObject.name == "JumpCard")
         {
             playerController.Jump();
             Destroy(this.gameObject);
-            deck.usedCard = true;
+            
         }
 
         if (this.name == "FireCard")
         {
             playerController.Shoot();
             Destroy(this.gameObject);
-            deck.usedCard = true;
+            
         }
 
         if (this.name == "GhostCard")
         {
             playerController.GhostSkill();
             Destroy(this.gameObject);
-            deck.usedCard = true;
+            
         }
 
         if (this.name == "DoubleShootCard")
         {
             playerController.DoubleShot();
             Destroy(this.gameObject);
-            deck.usedCard = true;
+            
         }
 
         if(this.name == "SlowTimeCard")
         {
             playerController.SlowPlayer();
             Destroy(this.gameObject);
-            deck.usedCard = true;
+            
         }
     }
 }

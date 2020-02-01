@@ -5,8 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  tags:
   - Obstacle
+  - JumpCard
+  - GhostCard
+  - FireCard
+  - SlowTimeCard
+  - DoubleShootCard
   layers:
   - Default
   - TransparentFX
