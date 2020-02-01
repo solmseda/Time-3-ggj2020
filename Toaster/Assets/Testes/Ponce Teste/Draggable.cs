@@ -39,6 +39,12 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             Destroy(this.gameObject);
         }
 
+        if(this.name == "GhostCard")
+        {
+            playerController.GhostSkill();
+            Destroy(this.gameObject);
+        }
+
 
         //GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
