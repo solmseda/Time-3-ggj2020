@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public Transform firePoint;
     public GameObject bullet;
+    public GameObject GameOverUI;
     private float startSpeed;
     public float slowTime = 3f;
     public float ghostTime = 2f;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameOverUI.SetActive(false);
         playerRB = this.GetComponent<Rigidbody2D>();
         startSpeed = speed;
         jumpTimerCounter = jumpTime;
@@ -88,5 +90,19 @@ public class PlayerController : MonoBehaviour
         speed = 0.5f;
         yield return new WaitForSeconds(slowTime);
         speed = startSpeed;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag != "Ground")
+        {
+            GameOver();
+        }
+    }
+
+        public void GameOver()
+    {
+        Time.timeScale = 0f;
+        GameOverUI.SetActive(true);
     }
 }

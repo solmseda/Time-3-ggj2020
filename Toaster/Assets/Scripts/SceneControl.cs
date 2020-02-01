@@ -5,10 +5,12 @@ using UnityEngine;
 public class SceneControl : MonoBehaviour
 {
     public bool gameIsPaused;
+    public GameObject PauseMenuUI;
     
     // Start is called before the first frame update
     void Start()
     {
+        PauseMenuUI.SetActive(false);
         gameIsPaused = false;
     }
 
@@ -17,11 +19,13 @@ public class SceneControl : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape)){
             if(!gameIsPaused){
+                PauseMenuUI.SetActive(true);
                 Debug.Log("O jogo foi pausado.");
                 gameIsPaused = true;
                 Pause();
             }
             else{
+                PauseMenuUI.SetActive(false);
                 Debug.Log("O jogo foi despausado.");
                 gameIsPaused = false;   
                 Resume();
