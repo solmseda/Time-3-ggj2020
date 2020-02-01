@@ -685,6 +685,7 @@ GameObject:
   - component: {fileID: 785676234}
   - component: {fileID: 785676236}
   - component: {fileID: 785676235}
+  - component: {fileID: 785676237}
   m_Layer: 0
   m_Name: Surfaces
   m_TagString: Untagged
@@ -911,6 +912,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &785676237
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785676233}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &803415197
 GameObject:
   m_ObjectHideFlags: 0
