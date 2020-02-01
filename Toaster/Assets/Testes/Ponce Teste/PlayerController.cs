@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRB = this.GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -31,5 +32,21 @@ public class PlayerController : MonoBehaviour
     public void Shoot()
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation);
+    }
+
+    public void GhostSkill()
+    {
+        GetComponent<Rigidbody2D>().gravityScale = 0f;
+        GetComponent<BoxCollider2D>().isTrigger = true;
+        StartCoroutine(RemoveGhostSkill());
+
+
+    }
+
+    IEnumerator RemoveGhostSkill()
+    {
+        yield return new WaitForSeconds(2);
+        GetComponent<Rigidbody2D>().gravityScale = 3f;
+        GetComponent<BoxCollider2D>().isTrigger = false;
     }
 }
