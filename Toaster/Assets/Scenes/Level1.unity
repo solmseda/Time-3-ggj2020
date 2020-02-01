@@ -874,6 +874,7 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
 --- !u!223 &323220318
+--- !u!223 &323220318 stripped
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1051,8 +1052,9 @@ PrefabInstance:
 --- !u!224 &428869409 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5639972137639891753, guid: 73962b9ab0f74402993f3a1c3ef25b97,
+  m_CorrespondingSourceObject: {fileID: 7411953943060605926, guid: b22604b67547e4185ae5c95596a4d706,
     type: 3}
-  m_PrefabInstance: {fileID: 428869408}
+  m_PrefabInstance: {fileID: 7411953943282784440}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &434814599 stripped
 GameObject:
@@ -2485,7 +2487,7 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5639972137639891753, guid: 73962b9ab0f74402993f3a1c3ef25b97,
     type: 3}
-  m_PrefabInstance: {fileID: 1015887694}
+  m_PrefabInstance: {fileID: 7411953943282784440}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1256966810
 PrefabInstance:
@@ -2648,9 +2650,9 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 73962b9ab0f74402993f3a1c3ef25b97, type: 3}
 --- !u!224 &1256966811 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5639972137639891753, guid: 73962b9ab0f74402993f3a1c3ef25b97,
+  m_CorrespondingSourceObject: {fileID: 7411953943478757243, guid: b22604b67547e4185ae5c95596a4d706,
     type: 3}
-  m_PrefabInstance: {fileID: 1256966810}
+  m_PrefabInstance: {fileID: 7411953943282784440}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1652633789
 GameObject:
