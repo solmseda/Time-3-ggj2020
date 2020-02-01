@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public float slowTime = 3f;
     public float ghostTime = 2f;
     public float timeBetweenShoots = 0.5f;
+    public float jumpTime;
+    private float jumpTimerCounter;
+    public float deathTime;
 
     private Rigidbody2D playerRB;
     // Start is called before the first frame update
@@ -19,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRB = this.GetComponent<Rigidbody2D>();
         startSpeed = speed;
+        jumpTimerCounter = jumpTime;
         
     }
 
@@ -31,7 +35,12 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         Debug.Log("Jump!!!");
-        playerRB.velocity = new Vector2(playerRB.velocity.x,jumpForce);
+        if(jumpTimerCounter > 0)
+        {
+            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+            jumpTimerCounter -= Time.deltaTime;
+        }
+        
     }
 
     public void Shoot()
