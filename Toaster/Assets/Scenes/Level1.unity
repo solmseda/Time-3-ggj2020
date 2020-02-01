@@ -1544,6 +1544,7 @@ GameObject:
   - component: {fileID: 1014398918}
   - component: {fileID: 1014398917}
   - component: {fileID: 1014398916}
+  - component: {fileID: 1014398919}
   m_Layer: 5
   m_Name: Hand
   m_TagString: Untagged
@@ -1639,6 +1640,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014398914}
   m_CullTransparentMesh: 0
+--- !u!114 &1014398919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014398914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5277431b60c43f0419ac257bdb0a49f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: []
+  handSize: 4
+  usedCard: 0
+  newCard: 0
 --- !u!1001 &1015887694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1766,6 +1783,11 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 2020003773}
+    - target: {fileID: 5639972137639891734, guid: 73962b9ab0f74402993f3a1c3ef25b97,
+        type: 3}
+      propertyPath: deck
+      value: 
+      objectReference: {fileID: 1014398919}
     - target: {fileID: 9120382209459657773, guid: 73962b9ab0f74402993f3a1c3ef25b97,
         type: 3}
       propertyPath: m_Text
