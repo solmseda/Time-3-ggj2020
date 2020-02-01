@@ -8,7 +8,10 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public Transform firePoint;
     public GameObject bullet;
+    public bool isDead = false;
+    
     private float startSpeed;
+    
     public float slowTime = 3f;
     public float ghostTime = 2f;
     public float timeBetweenShoots = 0.5f;
@@ -89,4 +92,13 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(slowTime);
         speed = startSpeed;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag != "Ground")
+        {
+            isDead = true;
+        }
+    }
+    
 }

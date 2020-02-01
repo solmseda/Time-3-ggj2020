@@ -11,6 +11,7 @@ TagManager:
   - FireCard
   - SlowTimeCard
   - DoubleShootCard
+  - Ground
   layers:
   - Default
   - TransparentFX
