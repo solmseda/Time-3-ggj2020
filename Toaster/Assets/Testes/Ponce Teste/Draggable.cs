@@ -7,6 +7,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 {
     public Transform parentToReturnTo = null;
     public PlayerController playerController;
+    public Deck deck;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -27,25 +28,47 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         this.transform.SetParent(parentToReturnTo);
 
+        HandleCardSkills();
+        
+
+        //GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+
+    private void HandleCardSkills()
+    {
         if (this.gameObject.name == "JumpCard")
         {
             playerController.Jump();
             Destroy(this.gameObject);
+            deck.usedCard = true;
         }
 
         if (this.name == "FireCard")
         {
             playerController.Shoot();
             Destroy(this.gameObject);
+            deck.usedCard = true;
         }
 
-        if(this.name == "GhostCard")
+        if (this.name == "GhostCard")
         {
             playerController.GhostSkill();
             Destroy(this.gameObject);
+            deck.usedCard = true;
         }
 
+        if (this.name == "DoubleShootCard")
+        {
+            playerController.DoubleShot();
+            Destroy(this.gameObject);
+            deck.usedCard = true;
+        }
 
-        //GetComponent<CanvasGroup>().blocksRaycasts = true;
+        if(this.name == "SlowTimeCard")
+        {
+            playerController.SlowPlayer();
+            Destroy(this.gameObject);
+            deck.usedCard = true;
+        }
     }
 }
