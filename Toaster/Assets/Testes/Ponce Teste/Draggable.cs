@@ -45,35 +45,35 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private void HandleCardSkills( )
     {
-        if (this.gameObject.name == "JumpCard")
+        if (this.gameObject.name == "JumpCard" || this.CompareTag("JumpCard"))
         {
             playerController.Jump();
             Destroy(this.gameObject);
             
         }
 
-        if (this.name == "FireCard")
+        if (this.name == "FireCard" || this.CompareTag("FireCard"))
         {
             playerController.Shoot();
             Destroy(this.gameObject);
             
         }
 
-        if (this.name == "GhostCard")
+        if (this.name == "GhostCard"  || this.CompareTag("GhostCard"))
         {
             playerController.GhostSkill();
             Destroy(this.gameObject);
             
         }
 
-        if (this.name == "DoubleShootCard")
+        if (this.name == "DoubleShootCard" || this.CompareTag("DoubleShootCard"))
         {
             playerController.DoubleShot();
             Destroy(this.gameObject);
             
         }
 
-        if(this.name == "SlowTimeCard")
+        if(this.name == "SlowTimeCard" || this.CompareTag("SlowTimeCard"))
         {
             playerController.SlowPlayer();
             Destroy(this.gameObject);

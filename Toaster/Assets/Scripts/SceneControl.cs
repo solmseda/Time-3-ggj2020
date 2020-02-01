@@ -7,7 +7,7 @@ public class SceneControl : MonoBehaviour
     public bool gameIsPaused;
     public GameObject PauseMenuUI;
     public GameObject GameOverUI;
-    public GameObject player;
+    public PlayerController player;
     
     // Start is called before the first frame update
     void Start()
