@@ -58,5 +58,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             playerController.DoubleShot();
             Destroy(this.gameObject);
         }
+
+        if(this.name == "SlowTimeCard")
+        {
+            playerController.SlowPlayer();
+            Destroy(this.gameObject);
+        }
     }
 }

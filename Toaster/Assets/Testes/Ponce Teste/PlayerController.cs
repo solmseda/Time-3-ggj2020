@@ -8,12 +8,17 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public Transform firePoint;
     public GameObject bullet;
+    private float startSpeed;
+    public float slowTime = 3f;
+    public float ghostTime = 2f;
+    public float timeBetweenShoots = 0.5f;
 
     private Rigidbody2D playerRB;
     // Start is called before the first frame update
     void Start()
     {
         playerRB = this.GetComponent<Rigidbody2D>();
+        startSpeed = speed;
         
     }
 
@@ -48,9 +53,15 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(ShootBullet());
     }
 
+
+    public void SlowPlayer()
+    {
+        StartCoroutine(SlowGameSpeed());
+    }
+
     IEnumerator RemoveGhostSkill()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(ghostTime);
         GetComponent<Rigidbody2D>().gravityScale = 3f;
         GetComponent<BoxCollider2D>().isTrigger = false;
     }
@@ -58,8 +69,15 @@ public class PlayerController : MonoBehaviour
     IEnumerator ShootBullet()
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(timeBetweenShoots);
         Instantiate(bullet, firePoint.position, firePoint.rotation);
 
+    }
+
+    IEnumerator SlowGameSpeed()
+    {
+        speed = 0.5f;
+        yield return new WaitForSeconds(slowTime);
+        speed = startSpeed;
     }
 }
