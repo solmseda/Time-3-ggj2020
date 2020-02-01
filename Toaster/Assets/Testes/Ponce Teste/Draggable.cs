@@ -7,6 +7,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 {
     public void OnBeginDrag(PointerEventData eventData)
     {
+        
+        this.transform.SetParent(this.transform.parent.parent);
         Debug.Log("OnBeginDrag");
     }
 
@@ -19,5 +21,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("OnEndDrag");
+        Destroy(this.gameObject);
     }
 }
