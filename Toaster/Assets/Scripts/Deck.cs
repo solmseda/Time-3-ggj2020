@@ -14,7 +14,7 @@ public class Deck : MonoBehaviour
     public GameObject[] deck;
     public card[] hand;
     public int handSize = 4;
-
+    public bool usedCard = false; // está bool é usada no script Draggable para mostrar que uma carta foi usada
     [SerializeField]
     public int newCard; //carta aleatoria a ser adicionada na mão
     
@@ -33,8 +33,7 @@ public class Deck : MonoBehaviour
 
     void Update()
     {
-        /*---C
-        ontrole da mão---*/
+        /*---Controle da mão---*/
         if(hand[0].wasUsed == true){
            for(int i = 0; i < handSize; i++){
                 hand[i] = hand[i+1]; // passa o próximo valor para a posição atual
@@ -63,5 +62,13 @@ public class Deck : MonoBehaviour
             hand[handSize].CardInHand = deck[aux]; // seta a carta aleatoria no final da mão
             hand[3].wasUsed = false;
         }
+
+        /*---Instaciar a carta na ultima posição da mão---*/
+        if (usedCard)
+        {
+            Instantiate(hand[handSize].CardInHand, this.transform);
+
+        }
+
     }
 }
