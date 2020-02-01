@@ -27,6 +27,14 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         this.transform.SetParent(parentToReturnTo);
 
+        HandleCardSkills();
+
+
+        //GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
+
+    private void HandleCardSkills()
+    {
         if (this.gameObject.name == "JumpCard")
         {
             playerController.Jump();
@@ -39,13 +47,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             Destroy(this.gameObject);
         }
 
-        if(this.name == "GhostCard")
+        if (this.name == "GhostCard")
         {
             playerController.GhostSkill();
             Destroy(this.gameObject);
         }
 
-
-        //GetComponent<CanvasGroup>().blocksRaycasts = true;
+        if (this.name == "DoubleShootCard")
+        {
+            playerController.DoubleShot();
+            Destroy(this.gameObject);
+        }
     }
 }

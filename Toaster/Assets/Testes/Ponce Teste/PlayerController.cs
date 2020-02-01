@@ -43,10 +43,23 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void DoubleShot()
+    {
+        StartCoroutine(ShootBullet());
+    }
+
     IEnumerator RemoveGhostSkill()
     {
         yield return new WaitForSeconds(2);
         GetComponent<Rigidbody2D>().gravityScale = 3f;
         GetComponent<BoxCollider2D>().isTrigger = false;
+    }
+
+    IEnumerator ShootBullet()
+    {
+        Instantiate(bullet, firePoint.position, firePoint.rotation);
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(bullet, firePoint.position, firePoint.rotation);
+
     }
 }
