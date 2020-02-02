@@ -59,12 +59,12 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             
         }
 
-        if (this.name == "GhostCard"  || this.CompareTag("GhostCard"))
-        {
-            playerController.GhostSkill();
-            Destroy(this.gameObject);
+        //if (this.name == "GhostCard"  || this.CompareTag("GhostCard"))
+        //{
+        //    playerController.GhostSkill();
+        //    Destroy(this.gameObject);
             
-        }
+        //}
 
         if (this.name == "DoubleShootCard" || this.CompareTag("DoubleShootCard"))
         {

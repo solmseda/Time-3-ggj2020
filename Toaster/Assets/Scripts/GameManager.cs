@@ -18,25 +18,11 @@ public class GameManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start () {
-        //for (int i = 0; i < skills.Length; i++) {
-        //    index = Random.Range (0, skills.Length);
-        //    Debug.Log (index);
-        ////    // qSkill.sprite = skills[index].sprite;
-        ////    // qSkill.name = skills[index].name;
 
-        ////    // wSkill.sprite = skills[index].sprite;
-        ////    // wSkill.name = skills[index].name;
+        }
 
-        ////    // eSkill.sprite = skills[index].sprite;
-        ////    // eSkill.name = skills[index].name;
-
-        ////    // rSkill.sprite = skills[index].sprite;
-        ////    // rSkill.name = skills[index].name;
-        ////}
-    }
-
-    // Update is called once per frame
-    void Update () {
+        // Update is called once per frame
+        void Update () {
 
         if (Input.GetKeyDown (KeyCode.Q)) {
             CastSkill (qSkill);
@@ -60,7 +46,7 @@ public class GameManager : MonoBehaviour {
 
     private void CastSkill (Image image) {
         if (image.name == "Jump") {
-            playerController.Jump ();
+            playerController.Shield();
         }
         if (image.name == "Slow_time") {
             playerController.SlowPlayer ();
@@ -71,8 +57,9 @@ public class GameManager : MonoBehaviour {
         if (image.name == "2X_Shock") {
             playerController.DoubleShot ();
         }
-        if (image.name == "Ghost") {
-            playerController.GhostSkill ();
+        if (image.name == "Shield")
+        {
+            playerController.Shield();
         }
     }
 

@@ -13,14 +13,20 @@ public class PlayerController : MonoBehaviour
     private float startSpeed;
     
     public float slowTime = 3f;
-    public float ghostTime = 2f;
+    //public float ghostTime = 2f;
     public float timeBetweenShoots = 0.5f;
     public float jumpTime;
     private float jumpTimerCounter;
     public float deathTime;
 
+    public bool isShieldOn = false;
+
     private Animator anim;
-     
+
+    public float shieldTime;
+
+    private Vector3 playerStartPoint;
+
 
     private Rigidbody2D playerRB;
     // Start is called before the first frame update
@@ -30,8 +36,9 @@ public class PlayerController : MonoBehaviour
         startSpeed = speed;
         jumpTimerCounter = jumpTime;
         anim = gameObject.GetComponent<Animator>();
+        playerStartPoint = this.transform.position;
 
-        
+
     }
 
     // Update is called once per frame
@@ -59,14 +66,14 @@ public class PlayerController : MonoBehaviour
         Instantiate(bullet, firePoint.position, firePoint.rotation);
     }
 
-    public void GhostSkill()
-    {
-        GetComponent<Rigidbody2D>().gravityScale = 0f;
-        GetComponent<BoxCollider2D>().isTrigger = true;
-        StartCoroutine(RemoveGhostSkill());
+    //public void GhostSkill()
+    //{
+    //    GetComponent<Rigidbody2D>().gravityScale = 0f;
+    //    GetComponent<BoxCollider2D>().isTrigger = true;
+    //    StartCoroutine(RemoveGhostSkill());
 
 
-    }
+    //}
 
     public void DoubleShot()
     {
@@ -80,12 +87,18 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(SlowGameSpeed());
     }
 
-    IEnumerator RemoveGhostSkill()
+    public void Shield()
     {
-        yield return new WaitForSeconds(ghostTime);
-        GetComponent<Rigidbody2D>().gravityScale = 3f;
-        GetComponent<BoxCollider2D>().isTrigger = false;
+        isShieldOn = true;
+        StartCoroutine(RemoveShield());
     }
+
+    //IEnumerator RemoveGhostSkill()
+    //{
+    //    yield return new WaitForSeconds(ghostTime);
+    //    GetComponent<Rigidbody2D>().gravityScale = 3f;
+    //    GetComponent<BoxCollider2D>().isTrigger = false;
+    //}
 
     IEnumerator ShootBullet()
     {
@@ -102,13 +115,39 @@ public class PlayerController : MonoBehaviour
         speed = startSpeed;
     }
 
+    IEnumerator RemoveShield()
+    {
+        yield return new WaitForSeconds(shieldTime);
+        isShieldOn = false;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Obstacle"))
         {
             Debug.Log("Morreu.");
             isDead = true;
+            RestartGame();
         }
+        if (collision.collider.CompareTag("Enemy") && isShieldOn == true)
+        {
+            Destroy(collision.collider.gameObject);
+        }
+        else if(collision.collider.CompareTag("Enemy") && isShieldOn == false)
+        {
+            RestartGame();
+        }
+        
     }
-    
+    private void RestartGame()
+    {
+        StartCoroutine("RestartGameCo");
+    }
+
+    public IEnumerator RestartGameCo()
+    {
+        yield return new WaitForSeconds(deathTime);
+        this.transform.position = playerStartPoint;
+    }
+
 }
