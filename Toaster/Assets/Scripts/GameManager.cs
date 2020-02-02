@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour {
 
     private void CastSkill (Image image) {
         if (image.name == "Jump") {
-            playerController.Shield();
+            playerController.Jump();
         }
         if (image.name == "Slow_time") {
             playerController.SlowPlayer ();
