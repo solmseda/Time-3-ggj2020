@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerStartPoint;
 
     public string sceneToLoad;
+    public string nextScene;
+
+    public SceneControl control;
 
 
     private Rigidbody2D playerRB;
@@ -131,7 +134,8 @@ public class PlayerController : MonoBehaviour
             if (collision.collider.CompareTag("Enemy"))
             {
                 Destroy(collision.collider.gameObject);
-            }else if (collision.collider.CompareTag("Obstacle"))
+            }
+            else if (collision.collider.CompareTag("Obstacle"))
             {
                 isDead = true;
                 RestartGame();
@@ -145,7 +149,10 @@ public class PlayerController : MonoBehaviour
                 RestartGame();
             }
         }
-        
+        if (collision.collider.CompareTag("Finish"))
+        {
+            control.ChangeScene(nextScene);
+        }
     }
     private void RestartGame()
     {
