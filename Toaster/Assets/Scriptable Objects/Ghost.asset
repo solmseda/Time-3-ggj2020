@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Ghost
   m_EditorClassIdentifier: 
   skill: Ghost
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 6ff47768999f14d2db11efdb523076a4, type: 3}

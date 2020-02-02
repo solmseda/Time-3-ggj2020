@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: DoubleShoot
   m_EditorClassIdentifier: 
   skill: DoubleShoot
+  sprite: {fileID: 21300000, guid: 2e30199de1fa0447aa455a5aea86e758, type: 3}
