@@ -29,11 +29,15 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerStartPoint;
 
     public string sceneToLoad;
+    public string nextScene;
+    public SceneControl sceneControl;   
 
     public AudioClip jumpClip;
     public AudioClip shockClip;
     public AudioClip shieldClip;
     public AudioClip slowTimeClip;
+    public AudioClip deathClip;
+    public AudioClip ratClip;
 
     private AudioSource audioSource;
 
@@ -145,9 +149,12 @@ public class PlayerController : MonoBehaviour
         {
             if (collision.collider.CompareTag("Enemy"))
             {
+                audioSource.PlayOneShot(ratClip);
                 Destroy(collision.collider.gameObject);
             }else if (collision.collider.CompareTag("Obstacle"))
             {
+                anim.Play("MortePlayer");
+                audioSource.PlayOneShot(deathClip);
                 isDead = true;
                 RestartGame();
             }
@@ -156,11 +163,16 @@ public class PlayerController : MonoBehaviour
         {
             if (collision.collider.CompareTag("Obstacle") || collision.collider.CompareTag("Cooker") || collision.collider.CompareTag("Enemy"))
             {
+                anim.Play("MortePlayer");
+                audioSource.PlayOneShot(deathClip);
                 isDead = true;
                 RestartGame();
             }
         }
-        
+        if (collision.collider.CompareTag("Finish"))
+        {
+            sceneControl.ChangeScene(nextScene);
+        }
     }
     private void RestartGame()
     {
