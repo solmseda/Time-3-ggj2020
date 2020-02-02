@@ -30,6 +30,13 @@ public class PlayerController : MonoBehaviour
 
     public string sceneToLoad;
 
+    public AudioClip jumpClip;
+    public AudioClip shockClip;
+    public AudioClip shieldClip;
+    public AudioClip slowTimeClip;
+
+    private AudioSource audioSource;
+
 
     private Rigidbody2D playerRB;
     // Start is called before the first frame update
@@ -41,6 +48,7 @@ public class PlayerController : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         playerStartPoint = this.transform.position;
 
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -55,6 +63,8 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Jump!!!");
         if(jumpTimerCounter > 0)
         {
+
+            audioSource.PlayOneShot(jumpClip);
             anim.Play("PuloPlayer");
             playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
             
@@ -66,6 +76,7 @@ public class PlayerController : MonoBehaviour
     public void Shoot()
     {
         anim.Play("Atirando");
+        audioSource.PlayOneShot(shockClip);
         Instantiate(bullet, firePoint.position, firePoint.rotation);
     }
 
@@ -81,18 +92,21 @@ public class PlayerController : MonoBehaviour
     public void DoubleShot()
     {
         anim.Play("Atirando");
+        audioSource.PlayOneShot(shockClip);
         StartCoroutine(ShootBullet());
     }
 
 
     public void SlowPlayer()
     {
+        audioSource.PlayOneShot(slowTimeClip);
         StartCoroutine(SlowGameSpeed());
     }
 
     public void Shield()
     {
         isShieldOn = true;
+        audioSource.PlayOneShot(shieldClip);
         StartCoroutine(RemoveShield());
     }
 
@@ -107,6 +121,7 @@ public class PlayerController : MonoBehaviour
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation);
         yield return new WaitForSeconds(timeBetweenShoots);
+        audioSource.PlayOneShot(shockClip);
         Instantiate(bullet, firePoint.position, firePoint.rotation);
 
     }
