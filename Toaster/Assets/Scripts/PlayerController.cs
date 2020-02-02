@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     private float jumpTimerCounter;
     public float deathTime;
 
+    private Animator anim;
+     
+
     private Rigidbody2D playerRB;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,8 @@ public class PlayerController : MonoBehaviour
         playerRB = this.GetComponent<Rigidbody2D>();
         startSpeed = speed;
         jumpTimerCounter = jumpTime;
+        anim = gameObject.GetComponent<Animator>();
+
         
     }
 
@@ -40,7 +45,9 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Jump!!!");
         if(jumpTimerCounter > 0)
         {
+            anim.Play("PuloPlayer");
             playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+            
             jumpTimerCounter -= Time.deltaTime;
         }
         
@@ -48,6 +55,7 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot()
     {
+        anim.Play("Atirando");
         Instantiate(bullet, firePoint.position, firePoint.rotation);
     }
 
@@ -62,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
     public void DoubleShot()
     {
+        anim.Play("Atirando");
         StartCoroutine(ShootBullet());
     }
 

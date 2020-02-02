@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
     public Image qSkill;
     public Image wSkill;
     public Image eSkill;
-    public Image rSkill;
+    
 
     private int index;
     private Sprite newSkill;
@@ -56,11 +56,6 @@ public class GameManager : MonoBehaviour {
             GenerateNewSkill (eSkill);
         }
 
-        if (Input.GetKeyDown (KeyCode.R)) {
-            CastSkill (rSkill);
-
-            GenerateNewSkill (rSkill);
-        }
     }
 
     private void CastSkill (Image image) {
