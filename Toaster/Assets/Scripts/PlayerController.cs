@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public string sceneToLoad;
     public string nextScene;
 
-    private readonly SceneControl control;
+    public SceneControl control;
 
 
     private Rigidbody2D playerRB;

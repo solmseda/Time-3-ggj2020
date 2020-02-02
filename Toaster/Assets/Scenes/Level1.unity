@@ -1529,6 +1529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 636052836}
   - component: {fileID: 636052835}
+  - component: {fileID: 636052837}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1577,6 +1578,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &636052837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636052834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1c6094e6647ef4799d14cb26fa5361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameIsPaused: 0
+  PauseMenuUI: {fileID: 0}
+  GameOverUI: {fileID: 0}
+  HandUI: {fileID: 0}
+  player: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!4 &666205292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5059310102439623576, guid: 97b9e9c6302e11d4b98a829898f7c6ff,
@@ -2599,6 +2618,16 @@ PrefabInstance:
       propertyPath: sceneToLoad
       value: Level1
       objectReference: {fileID: 0}
+    - target: {fileID: 6448446378030836210, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
+        type: 3}
+      propertyPath: nextScene
+      value: Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448446378030836210, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
+        type: 3}
+      propertyPath: control
+      value: 
+      objectReference: {fileID: 636052837}
     - target: {fileID: 6448446378146399166, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
         type: 3}
       propertyPath: m_LocalPosition.y
