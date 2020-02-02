@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip shieldClip;
     public AudioClip slowTimeClip;
     public AudioClip deathClip;
+    public AudioClip ratClip;
 
     private AudioSource audioSource;
 
@@ -148,6 +149,7 @@ public class PlayerController : MonoBehaviour
         {
             if (collision.collider.CompareTag("Enemy"))
             {
+                audioSource.PlayOneShot(ratClip);
                 Destroy(collision.collider.gameObject);
             }else if (collision.collider.CompareTag("Obstacle"))
             {
