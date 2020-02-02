@@ -15,7 +15,6 @@ public class RatController : MonoBehaviour
 
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +26,18 @@ public class RatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         atualPosition = this.transform.position.x;
-        
+        if(atualPosition - originalPosition == 3f)
+        {
+            ratRb.velocity = new Vector2(speed * -changeDirection, ratRb.velocity.y);
+            this.transform.eulerAngles = new Vector2(0, 180);
+        }
+        else if(atualPosition - originalPosition == -3f)
+        {
+            changeDirection = 1f;
+            ratRb.velocity = new Vector2(speed * changeDirection, ratRb.velocity.y);
+            this.transform.eulerAngles = new Vector2(0, 0);
+        }
 
         if (changeDirection > 0)
         {
@@ -45,10 +53,9 @@ public class RatController : MonoBehaviour
             
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.CompareTag("EnemyTurn"))
+        if(!collision.collider.CompareTag("Ground"))
         {
             changeDirection = changeDirection * -1f;
         }
