@@ -33,6 +33,29 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         playerRB.velocity = new Vector2(speed, playerRB.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Jump();
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            DoubleShot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SlowPlayer();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Shoot();
+        }
+
+
+
     }
 
     public void Jump()
