@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip shockClip;
     public AudioClip shieldClip;
     public AudioClip slowTimeClip;
+    public AudioClip deathClip;
 
     private AudioSource audioSource;
 
@@ -148,6 +149,8 @@ public class PlayerController : MonoBehaviour
                 Destroy(collision.collider.gameObject);
             }else if (collision.collider.CompareTag("Obstacle"))
             {
+                anim.Play("MortePlayer");
+                audioSource.PlayOneShot(deathClip);
                 isDead = true;
                 RestartGame();
             }
@@ -156,6 +159,8 @@ public class PlayerController : MonoBehaviour
         {
             if (collision.collider.CompareTag("Obstacle") || collision.collider.CompareTag("Cooker") || collision.collider.CompareTag("Enemy"))
             {
+                anim.Play("MortePlayer");
+                audioSource.PlayOneShot(deathClip);
                 isDead = true;
                 RestartGame();
             }
