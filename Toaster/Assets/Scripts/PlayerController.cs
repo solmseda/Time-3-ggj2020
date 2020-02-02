@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
     public float shieldTime;
 
     private Vector3 playerStartPoint;
+
+    public string sceneToLoad;
 
 
     private Rigidbody2D playerRB;
@@ -136,7 +139,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if (collision.collider.CompareTag("Obstacle") || collision.collider.CompareTag("Cooker"))
+            if (collision.collider.CompareTag("Obstacle") || collision.collider.CompareTag("Cooker") || collision.collider.CompareTag("Enemy"))
             {
                 isDead = true;
                 RestartGame();
@@ -152,7 +155,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator RestartGameCo()
     {
         yield return new WaitForSeconds(deathTime);
-        this.transform.position = playerStartPoint;
+        SceneManager.LoadScene(sceneToLoad);
     }
 
 }
