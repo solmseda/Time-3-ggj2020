@@ -1772,8 +1772,8 @@ MonoBehaviour:
   PauseMenuUI: {fileID: 1103693309}
   GameOverUI: {fileID: 1496044293}
   HandUI: {fileID: 1014398914}
-  player: {fileID: 0}
-  Player: {fileID: 0}
+  player: {fileID: 1294073337}
+  Player: {fileID: 1294073335}
 --- !u!4 &666205292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5059310102439623576, guid: 97b9e9c6302e11d4b98a829898f7c6ff,
@@ -3205,7 +3205,7 @@ PrefabInstance:
     - target: {fileID: 6448446378030836212, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4959
+      value: 30.57
       objectReference: {fileID: 0}
     - target: {fileID: 6448446378030836212, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
         type: 3}
@@ -3276,6 +3276,16 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneToLoad
       value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448446378030836210, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
+        type: 3}
+      propertyPath: sceneControl
+      value: 
+      objectReference: {fileID: 636052837}
+    - target: {fileID: 6448446378030836210, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
+        type: 3}
+      propertyPath: nextScene
+      value: Level2
       objectReference: {fileID: 0}
     - target: {fileID: 6448446377872086842, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
         type: 3}
