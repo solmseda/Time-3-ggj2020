@@ -2694,6 +2694,11 @@ PrefabInstance:
       propertyPath: doubleShockClip
       value: 
       objectReference: {fileID: 8300000, guid: 7daf08c6acbad4bac9c518b6c88fcffa, type: 3}
+    - target: {fileID: 6448446378030836210, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
+        type: 3}
+      propertyPath: shieldTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6448446377869418771, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6214,7 +6219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1755094551
 SpriteRenderer:
   m_ObjectHideFlags: 0
