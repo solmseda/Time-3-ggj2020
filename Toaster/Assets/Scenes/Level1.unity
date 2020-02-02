@@ -1492,10 +1492,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skills:
+  - {fileID: 11400000, guid: 947234c0ec04949bb92f4a0aadc4a3b1, type: 2}
+  - {fileID: 11400000, guid: 947234c0ec04949bb92f4a0aadc4a3b1, type: 2}
+  - {fileID: 11400000, guid: 947234c0ec04949bb92f4a0aadc4a3b1, type: 2}
+  - {fileID: 11400000, guid: 947234c0ec04949bb92f4a0aadc4a3b1, type: 2}
+  - {fileID: 11400000, guid: 34762097e4da64b1195092dad8e48c61, type: 2}
   - {fileID: 11400000, guid: 34762097e4da64b1195092dad8e48c61, type: 2}
   - {fileID: 11400000, guid: b43e1b0ecb72247dcb8a172b9b0d3908, type: 2}
-  - {fileID: 11400000, guid: 947234c0ec04949bb92f4a0aadc4a3b1, type: 2}
   - {fileID: 11400000, guid: d56806100ac0140cc8087ea980b93405, type: 2}
+  - {fileID: 11400000, guid: 33b6e538704e34968b10a5e711e5f104, type: 2}
   - {fileID: 11400000, guid: 33b6e538704e34968b10a5e711e5f104, type: 2}
   playerController: {fileID: 1676680336}
   qSkill: {fileID: 1791013994}
