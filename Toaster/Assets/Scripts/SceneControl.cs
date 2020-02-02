@@ -41,10 +41,10 @@ public class SceneControl : MonoBehaviour
             }
         }
 
-        if (player.isDead)
+        /*if (player.isDead)
         {
             GameOver();
-        }
+        }*/
     }
 
     public void Pause(){
