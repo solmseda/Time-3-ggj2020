@@ -123,19 +123,24 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Obstacle"))
+        if (isShieldOn)
         {
-            Debug.Log("Morreu.");
-            isDead = true;
-            RestartGame();
+            if (collision.collider.CompareTag("Enemy"))
+            {
+                Destroy(collision.collider.gameObject);
+            }else if (collision.collider.CompareTag("Obstacle"))
+            {
+                isDead = true;
+                RestartGame();
+            }
         }
-        if (collision.collider.CompareTag("Enemy") && isShieldOn == true)
+        else
         {
-            Destroy(collision.collider.gameObject);
-        }
-        else if(collision.collider.CompareTag("Enemy") && isShieldOn == false)
-        {
-            RestartGame();
+            if (collision.collider.CompareTag("Obstacle") || collision.collider.CompareTag("Cooker"))
+            {
+                isDead = true;
+                RestartGame();
+            }
         }
         
     }

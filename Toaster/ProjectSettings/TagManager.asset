@@ -13,6 +13,7 @@ TagManager:
   - DoubleShootCard
   - Ground
   - Surfaces
+  - Cooker
   layers:
   - Default
   - TransparentFX
