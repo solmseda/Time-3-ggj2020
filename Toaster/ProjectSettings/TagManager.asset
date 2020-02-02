@@ -12,6 +12,7 @@ TagManager:
   - SlowTimeCard
   - DoubleShootCard
   - Ground
+  - Surfaces
   layers:
   - Default
   - TransparentFX

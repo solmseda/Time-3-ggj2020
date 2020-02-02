@@ -12,17 +12,7 @@ public class DropZone : MonoBehaviour, IDropHandler,IPointerEnterHandler, IPoint
         if (card != null)
         {
             card.parentToReturnTo = this.transform;
-            if ( card.name == "JumpCard")
-            {
-                playerController.Jump();
-                Destroy(card.gameObject);
-            }
-
-            if (card.name == "FireCard")
-            {
-                playerController.Shoot();
-                Destroy(card.gameObject);
-            }
+           
 
             
         }
