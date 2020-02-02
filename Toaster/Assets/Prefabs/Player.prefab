@@ -830,6 +830,7 @@ MonoBehaviour:
   deathTime: 0
   isShieldOn: 0
   shieldTime: 0
+  sceneToLoad: 
 --- !u!70 &1967267554869107087
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1087,7 +1088,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6448446378685321765}
   m_LocalRotation: {x: -0, y: -0, z: 0.039899494, w: 0.9992037}
-  m_LocalPosition: {x: 6.84, y: -0.29, z: 84.29219}
+  m_LocalPosition: {x: 0.43, y: -0.29, z: 84.29219}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6448446377872086843}
@@ -1130,7 +1131,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 17
+  m_SortingOrder: -6
   m_Sprite: {fileID: 21300000, guid: 2d2ad9d7395c8794e8917c6f7e083d3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
