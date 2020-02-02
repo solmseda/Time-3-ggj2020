@@ -11,7 +11,6 @@ public class SceneControl : MonoBehaviour
     public GameObject HandUI;
     public PlayerController player;
     public GameObject Player;
-    public
     
     // Start is called before the first frame update
     void Start()
@@ -47,6 +46,7 @@ public class SceneControl : MonoBehaviour
             GameOver();
         }
     }
+
 
     public void Pause(){
         Time.timeScale = 0f;

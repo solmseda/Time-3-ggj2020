@@ -14,8 +14,8 @@ TagManager:
   - Ground
   - Surfaces
   - Cooker
-  - FinishLine
   - EnemyTurn
+  - Fogo
   layers:
   - Default
   - TransparentFX

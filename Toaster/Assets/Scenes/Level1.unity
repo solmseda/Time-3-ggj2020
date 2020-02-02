@@ -2476,7 +2476,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 134.45001}
+  m_AnchoredPosition: {x: -5.960022, y: 133.99}
   m_SizeDelta: {x: 0, y: 268.90002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1014398917
@@ -2598,6 +2598,16 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneToLoad
       value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448446378146399166, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448446378146399166, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 6448446377869418771, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
         type: 3}
@@ -7548,6 +7558,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169285402982553602, guid: 22493578f8f344a8ba212b774e1228f5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 7169285402982553607, guid: 22493578f8f344a8ba212b774e1228f5,
         type: 3}
