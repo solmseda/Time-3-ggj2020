@@ -95,8 +95,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag != "Ground")
+        if (collision.collider.CompareTag("Obstacle"))
         {
+            Debug.Log("Morreu.");
             isDead = true;
         }
     }
