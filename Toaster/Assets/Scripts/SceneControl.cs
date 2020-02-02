@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SceneControl : MonoBehaviour
 {
-    public bool gameIsPaused;
+    public bool gameIsPaused = false;
     public GameObject PauseMenuUI;
     public GameObject GameOverUI;
+    public GameObject HandUI;
     public PlayerController player;
     
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class SceneControl : MonoBehaviour
     {
         PauseMenuUI.SetActive(false);
         GameOverUI.SetActive(false);
+        HandUI.SetActive(true);
         gameIsPaused = false;
     }
 
@@ -23,12 +25,14 @@ public class SceneControl : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape)){
             if(!gameIsPaused){
                 PauseMenuUI.SetActive(true);
+                HandUI.SetActive(false);
                 Debug.Log("O jogo foi pausado.");
                 gameIsPaused = true;
                 Pause();
             }
             else{
                 PauseMenuUI.SetActive(false);
+                HandUI.SetActive(true);
                 Debug.Log("O jogo foi despausado.");
                 gameIsPaused = false;
                 Resume();
@@ -53,6 +57,7 @@ public class SceneControl : MonoBehaviour
     {
         Time.timeScale = 0f;
         GameOverUI.SetActive(true);
+        HandUI.SetActive(false);
     }
 
     public void QuitGame(){
