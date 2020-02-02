@@ -23,10 +23,12 @@ public class PlayerController : MonoBehaviour
     public bool isShieldOn = false;
 
     private Animator anim;
+    private SpriteRenderer spriteRenderer;
 
     public float shieldTime;
 
     private Vector3 playerStartPoint;
+    private Color startColor;
 
     public string sceneToLoad;
     public string nextScene;
@@ -53,6 +55,9 @@ public class PlayerController : MonoBehaviour
         playerStartPoint = this.transform.position;
 
         audioSource = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        startColor = spriteRenderer.color;
 
     }
 
@@ -111,6 +116,7 @@ public class PlayerController : MonoBehaviour
     {
         isShieldOn = true;
         audioSource.PlayOneShot(shieldClip);
+        spriteRenderer.color = new Color(49f,70f,75f,225f);
         StartCoroutine(RemoveShield());
     }
 
