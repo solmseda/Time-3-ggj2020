@@ -3277,6 +3277,11 @@ PrefabInstance:
       propertyPath: sceneToLoad
       value: Level1
       objectReference: {fileID: 0}
+    - target: {fileID: 6448446377872086842, guid: 26a17c3b8cd94d248b2d1b610f893e5c,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.9098039
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a17c3b8cd94d248b2d1b610f893e5c, type: 3}
 --- !u!1 &1294073335 stripped

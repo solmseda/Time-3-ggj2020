@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
     private SpriteRenderer spriteRenderer;
+    
 
     public float shieldTime;
 
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip ratClip;
 
     private AudioSource audioSource;
+    private Transform spritePlayer;
 
 
     private Rigidbody2D playerRB;
@@ -55,9 +57,16 @@ public class PlayerController : MonoBehaviour
         playerStartPoint = this.transform.position;
 
         audioSource = GetComponent<AudioSource>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+   
+
+        spritePlayer = transform.Find("torradeira");
+
+        spriteRenderer = spritePlayer.GetComponent<SpriteRenderer>();
 
         startColor = spriteRenderer.color;
+        
+
+        
 
     }
 
@@ -116,6 +125,7 @@ public class PlayerController : MonoBehaviour
     {
         isShieldOn = true;
         audioSource.PlayOneShot(shieldClip);
+
         spriteRenderer.color = new Color(49f,70f,75f,225f);
         StartCoroutine(RemoveShield());
     }
