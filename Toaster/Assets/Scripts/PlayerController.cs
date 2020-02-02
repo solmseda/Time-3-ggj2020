@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerStartPoint;
 
     public string sceneToLoad;
+    public string nextScene;
+    public SceneControl sceneControl;   
 
     public AudioClip jumpClip;
     public AudioClip shockClip;
@@ -165,7 +167,10 @@ public class PlayerController : MonoBehaviour
                 RestartGame();
             }
         }
-        
+        if (collision.collider.CompareTag("Finish"))
+        {
+            sceneControl.ChangeScene(nextScene);
+        }
     }
     private void RestartGame()
     {
